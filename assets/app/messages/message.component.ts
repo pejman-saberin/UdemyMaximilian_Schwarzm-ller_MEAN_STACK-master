@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component ,Input} from '@angular/core';
+import {Message} from "./message.model"
 
 
 @Component({
@@ -27,5 +28,6 @@ import { Component } from '@angular/core';
 
 
 export class MessageComponent{
+  @Input()message: Message;   //property bingning
 
 }
