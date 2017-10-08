@@ -7,5 +7,12 @@ import {Message} from "./messages/message.model"
 
 })
 export class AppComponent {
-    message: Message= new Message ('Some message','max');
+    //message: Message= new Message ('Some message','max');
+
+    messages: Message []=[
+      new Message ('Some message','max'),
+      new Message ('Something esle','Pejman')
+    ]
+
+
 }
