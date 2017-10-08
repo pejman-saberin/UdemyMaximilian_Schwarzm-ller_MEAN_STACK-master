@@ -28,9 +28,15 @@ import {Message} from "./message.model"
 
 
 export class MessageComponent{
-  @Output() editClicked=new EventEmitter<string>();
-  @Input()message: Message;   //property bingning
+  @Input()message: Message;   //property bingning use if you want to pass data to other component
+  @Output() editClicked=new EventEmitter<string>();  //do this if you want other component to listen to the event
 
   color='red';
+
+  //I am doing video 39 after 41. It was missed
+  onEdit(){
+    //alert('it worked');
+    this.editClicked.emit('A new value');  //emits a new event
+  }
 
 }
