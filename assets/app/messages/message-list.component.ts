@@ -1,5 +1,6 @@
-import {Component} from "@angular/core";
-import {Message} from "./message.model"
+import {Component,OnInit} from "@angular/core";
+import {Message} from "./message.model";
+import {MessageService} from "./message.service";
 
 @Component({
   selector: 'app-message-list',
@@ -13,16 +14,21 @@ import {Message} from "./message.model"
     </app-message>
 
   </div>
-  `
+  `,
+    providers:[MessageService] //dependency injection
 })
-export class MessageListComponent{
+export class MessageListComponent implements OnInit{
 
   messages: Message []=[
     new Message ('Some message','max'),
     new Message ('Something esle','Pejman')
   ]
 
+  constructor(private messageService:MessageService){}
 
+  ngOnInit(){ ///after the component and the properties have been initilized
+    this.messages=this.messageService.getMessages();
+  }
 
 
 }
