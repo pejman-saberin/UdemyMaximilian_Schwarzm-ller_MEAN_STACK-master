@@ -6,7 +6,7 @@ import {Message} from "./message.model"
 @Component({
   selector: 'app-message-input',
   templateUrl: './message-input.component.html',
-  providers:[MessageService] //dependency injection
+  //providers:[MessageService] //dependency injection  --> we want to use one instance of the provider for both the list and the input so commented out from here
 
 })
 

@@ -15,7 +15,7 @@ import {MessageService} from "./message.service";
 
   </div>
   `,
-    providers:[MessageService] //dependency injection
+    //providers:[MessageService] //dependency injection   --> we want to use one instance of the provider for both the list and the input so commented out from here
 })
 export class MessageListComponent implements OnInit{
 
