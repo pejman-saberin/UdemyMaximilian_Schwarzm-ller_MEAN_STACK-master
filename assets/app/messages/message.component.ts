@@ -1,5 +1,6 @@
 import { Component ,Input,Output,EventEmitter} from '@angular/core';
 import {Message} from "./message.model"
+import {MessageService} from "./message.service"
 
 
 @Component({
@@ -33,10 +34,17 @@ export class MessageComponent{
 
   color='red';
 
+  constructor(private messageService: MessageService){}
+
   //I am doing video 39 after 41. It was missed
   onEdit(){
     //alert('it worked');
     this.editClicked.emit('A new value');  //emits a new event
+  }
+
+  onDelete(){
+    console.log('Delete is called');
+    this.messageService.deleteMessage(this.message);
   }
 
 }
