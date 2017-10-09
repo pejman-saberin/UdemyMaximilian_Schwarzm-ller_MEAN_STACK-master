@@ -22,6 +22,6 @@ a.danger {
   margin-bottom: 20px;
 }
 
-input.ng-invalid.ng-touched {
+input.ng-invalid.ng-touched {  /*anthing invalid (like forms) gets the red border*/
   border: 1px solid red;
 }
